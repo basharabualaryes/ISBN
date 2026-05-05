@@ -1,0 +1,107 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif; /* استخدام خط عربي مودرن */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* لمنع السكرول المزدوج */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* خلفية متدرجة ناعمة */
+  direction: rtl;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 20px; /* زوايا أنعم */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  animation: slideIn 0.5s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* تأثير حركة خفيف عند تمرير الماوس */
+}
+
+.card-title {
+  display: flex;
+  flex-direction: row-reverse; /* ترتيب أيقونة ثم نص من اليمين */
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* مسافة أمان بين الأيقونة والنص */
+  margin-bottom: 10px; /* مسافة بسيطة تحت العنوان */
+}
+
+.card-title h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  white-space: nowrap; /* يمنع الكلمات من النزول تحت بعضها */
+  color: #2c3e50;
+}
+
+input {
+  margin-top: 20px; /* يعطي مسافة فوق البوكس */
+  margin-bottom: 10px; /* مسافة تحت البوكس للرسالة */
+}
+
+p {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  outline: none;
+  transition: all 0.3s ease;
+  text-align: center; /* توسيع النص داخل المدخل */
+}
+
+input:focus {
+  border-color: #3498db; /* لون مميز عند التركيز */
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+}
+
+/* التنسيق الديناميكي للألوان (صحيح/خطأ) */
+input.valid { border-color: #2ecc71; background-color: #f0fff4; }
+input.invalid { border-color: #e74c3c; background-color: #fff5f5; }
+
+.status-msg {
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-size: 1rem;
+  animation: fadeIn 0.4s ease;
+}
+
+/* الألوان الحيوية الجديدة للرسائل */
+.valid-msg { color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; }
+.invalid-msg { color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; }
+
+/* تأثيرات حركية (Animations) */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
